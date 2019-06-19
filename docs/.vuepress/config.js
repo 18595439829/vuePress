@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/vuePress/',
   title: "洋洋", // 设置网站标题
   description: "个人开发博客",
   port: "8000",
