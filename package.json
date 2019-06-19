@@ -5,5 +5,13 @@
         "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs",
         "deploy": "./docs/deploy.sh"
+    },
+    "dependencies": {
+        "vue": "^2.6.6"
+
+    },
+    "devDependencies": {
+        "less": "^3.0.4",
+        "less-loader": "^4.1.0"
     }
 }
