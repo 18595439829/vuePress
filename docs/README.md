@@ -4,8 +4,8 @@ heroImage: /img/羊驼.jpg
 actionText: 开始
 actionLink: /vue/nginx/
 features:
-  title: 个人开发博客
-  details: 针对在平时开发中碰到的问题,做一个总结。
+# - title: 个人开发博客
+#   details: 针对在平时开发中碰到的问题,做一个总结。
 # - title: Vue驱动
 #   details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
 # - title: 高性能

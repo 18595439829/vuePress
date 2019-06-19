@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         text: "github",
-        link: "https://github.com/18595439829/document/tree/vuePress"
+        link: "https://github.com/18595439829/vuePress"
       }
     ],
     sidebar: {
