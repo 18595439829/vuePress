@@ -1,6 +1,6 @@
 # 使用vuePress搭建自己的博客网站
 *[vuepress官网](https://v1.vuepress.vuejs.org/zh/)*
-### 先行测试
+## 先行测试
 ```
 # 安装
 yarn global add vuepress # 或者：npm install -g vuepress
@@ -14,7 +14,7 @@ vuepress dev .
 # 构建静态文件
 vuepress build .
 ```
-###  安装
+##  安装
 ```
 yarn global add vuepress # 或者：npm install -g vuepress
 ```
@@ -33,7 +33,7 @@ yarn global add vuepress # 或者：npm install -g vuepress
  package.json  // webpack配置文件,指令/依赖版本
  README.md  // git项目自带文件
 ```
-### 开始
+## 开始
 1.  docs文件夹下新增README.md文件
 ```
 #  README.md
@@ -116,4 +116,4 @@ vuepress build
 ```
 7. 部署到服务器
 我是用的腾讯云部署的,没有使用官网的githun部署,参考我的另一篇文章
-使用nginx将自己的vue项目部署到服务器上([https://www.jianshu.com/p/daaaaef7fe8f](/nginx/))
+使用nginx将自己的vue项目部署到服务器上([使用nginx将自己的vue项目部署到服务器上](/vue/nginx/))
