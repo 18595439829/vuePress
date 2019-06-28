@@ -23,7 +23,7 @@ module.exports = {
       }
     ],
     sidebar: {
-      "/vue/": ["nginx", "markdown", "vuePress", "fileUpload"]
+      "/vue/": ["nginx", "markdown", "vuePress", "fileUpload", "jenkins"]
     }
   }
 };
