@@ -1,5 +1,6 @@
 # 启动
 ## 注意事项
+
 *请先安装yarn和vuepress*
 1. 安装yarn
 ```
