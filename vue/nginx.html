@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用nginx将自己的vue项目部署到服务器上 | 洋洋</title>
+    <meta name="description" content="个人开发博客">
+    <link rel="icon" href="/vuePress/img/羊驼.png">
+    
+    <link rel="preload" href="/vuePress/assets/css/0.styles.e41b3665.css" as="style"><link rel="preload" href="/vuePress/assets/js/app.54efdfbe.js" as="script"><link rel="preload" href="/vuePress/assets/js/2.13ac19b1.js" as="script"><link rel="preload" href="/vuePress/assets/js/11.9ab54dcb.js" as="script"><link rel="prefetch" href="/vuePress/assets/js/10.b1e6ef26.js"><link rel="prefetch" href="/vuePress/assets/js/12.c7f8d78a.js"><link rel="prefetch" href="/vuePress/assets/js/13.f0f98087.js"><link rel="prefetch" href="/vuePress/assets/js/3.871ac12e.js"><link rel="prefetch" href="/vuePress/assets/js/4.6e5369fe.js"><link rel="prefetch" href="/vuePress/assets/js/5.454926b1.js"><link rel="prefetch" href="/vuePress/assets/js/6.10eca69b.js"><link rel="prefetch" href="/vuePress/assets/js/7.53b6abfb.js"><link rel="prefetch" href="/vuePress/assets/js/8.5b1489e8.js"><link rel="prefetch" href="/vuePress/assets/js/9.26c6c7c2.js">
+    <link rel="stylesheet" href="/vuePress/assets/css/0.styles.e41b3665.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuePress/" class="home-link router-link-active"><!----> <span class="site-name">洋洋</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuePress/start/" class="nav-link">开始</a></div><div class="nav-item"><a href="/vuePress/vue/" class="nav-link router-link-active">vue</a></div><div class="nav-item"><a href="https://github.com/18595439829/vuePress" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuePress/start/" class="nav-link">开始</a></div><div class="nav-item"><a href="/vuePress/vue/" class="nav-link router-link-active">vue</a></div><div class="nav-item"><a href="https://github.com/18595439829/vuePress" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/vuePress/vue/nginx.html" class="active sidebar-link">使用nginx将自己的vue项目部署到服务器上</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress/vue/nginx.html#进阶" class="sidebar-link">进阶</a></li></ul></li><li><a href="/vuePress/vue/markdown.html" class="sidebar-link">在vue项目中(vue-cli3.0)展示markdown文件</a></li><li><a href="/vuePress/vue/vuePress.html" class="sidebar-link">使用vuePress搭建自己的博客网站</a></li><li><a href="/vuePress/vue/fileUpload.html" class="sidebar-link">vue文件下载:</a></li><li><a href="/vuePress/vue/jenkins.html" class="sidebar-link">使用jenkins自动化构建部署项目(windows64位)</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="使用nginx将自己的vue项目部署到服务器上"><a href="#使用nginx将自己的vue项目部署到服务器上" aria-hidden="true" class="header-anchor">#</a> 使用nginx将自己的vue项目部署到服务器上</h1> <ul><li><p>第一步:下载安装nginx  官网: <em><a href="http://nginx.org/en/" target="_blank" rel="noopener noreferrer">http://nginx.org/en/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></em></p></li> <li><p>第二步:将自己的vue项目打包为dist文件夹;</p></li> <li><p>第三步:解压下载的nginx文件夹,使用cmd进入到nginx文件夹下,使用指令start  nginx启动nginx服务器;</p></li> <li><p>第四步:浏览器输入localhost:80,查看nginx是否启动;</p></li> <li><p>第五步:进入nginx/html文件夹下,删除50.html和index.html文件,将vue项目打包玩的dist文件夹下的所有文件复制到nginx/html文件夹下;</p></li> <li><p>第六步:刷新浏览器,项目启动成功;</p></li></ul> <h2 id="进阶"><a href="#进阶" aria-hidden="true" class="header-anchor">#</a> 进阶</h2> <p>1.在同一域名下监听不同端口,启动不同项目;</p> <ul><li><p>第一步:将不同的项目打包dist,并重命名为app1,   app2 ...</p></li> <li><p>第二步:将项目文件夹移到nginx/html文件夹下;</p></li> <li><p>第三步:打开nginx/conf/nginx.conf文件, 找到</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>server {
+
+      listen      8001;   
+
+    #   监听的端口号;
+
+      server_name  localhost;
+
+     #  服务器地址:可以使ip,对应hosts文件
+
+      location / {
+
+     #   localhost:8001 浏览器访问根路径,不可修改
+
+          root  html/app1;
+
+     #   指定项目所在路径html/项目名字
+
+          index  index.html index.htm;
+
+     #    指定项目入口文件,一般默认index.html
+
+     }
+
+    location = /app1/index.html {
+
+    #     浏览器访问地址,指向项目文件夹下的index.html
+
+            root  html/emms;
+
+            index  index.html index.htm;
+
+        }
+
+  }
+server {
+
+      listen      8002;   
+
+    #   监听的端口号;
+
+      server_name  localhost;
+
+     #  服务器地址:可以使ip,对应hosts文件
+
+      location / {
+
+     #   localhost:8002 浏览器访问根路径,不可修改
+
+          root  html/app2;
+
+     #   指定项目所在路径html/项目名字
+
+          index  index.html index.htm;
+
+     #    指定项目入口文件,一般默认index.html
+
+     }
+
+location = /app2/index.html {
+
+    #     浏览器访问地址,指向项目文件夹下的index.html
+
+            root  html/app2;
+
+            index  index.html index.htm;
+
+        }
+
+    }
+</code></pre></div><p>需要几个项目复制几个,修改为对应的项目名称</p> <ul><li>第四步: 使用指令nginx -s reload重启nginx,如果不行,使用nginx -s stop  停止nginx  ,然后再启动</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/vuePress/vue/markdown.html">
+          在vue项目中(vue-cli3.0)展示markdown文件
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuePress/assets/js/app.54efdfbe.js" defer></script><script src="/vuePress/assets/js/2.13ac19b1.js" defer></script><script src="/vuePress/assets/js/11.9ab54dcb.js" defer></script>
+  </body>
+</html>
