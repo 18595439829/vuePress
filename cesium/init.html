@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cesium初始化viewer示例(一) | 洋洋</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/vuePress/img/羊驼.jpg">
+    <meta name="description" content="个人开发博客">
+    
+    <link rel="preload" href="/vuePress/assets/css/0.styles.0cb5e717.css" as="style"><link rel="preload" href="/vuePress/assets/js/app.41c918b9.js" as="script"><link rel="preload" href="/vuePress/assets/js/2.16646843.js" as="script"><link rel="preload" href="/vuePress/assets/js/10.12a39fba.js" as="script"><link rel="prefetch" href="/vuePress/assets/js/11.b9b933de.js"><link rel="prefetch" href="/vuePress/assets/js/12.0d09911f.js"><link rel="prefetch" href="/vuePress/assets/js/13.08b1deb3.js"><link rel="prefetch" href="/vuePress/assets/js/14.6297148e.js"><link rel="prefetch" href="/vuePress/assets/js/15.49e42ec5.js"><link rel="prefetch" href="/vuePress/assets/js/16.eb2a9f20.js"><link rel="prefetch" href="/vuePress/assets/js/17.a055bb84.js"><link rel="prefetch" href="/vuePress/assets/js/18.c659b953.js"><link rel="prefetch" href="/vuePress/assets/js/19.18ef0d2f.js"><link rel="prefetch" href="/vuePress/assets/js/20.c391b9d7.js"><link rel="prefetch" href="/vuePress/assets/js/21.56753342.js"><link rel="prefetch" href="/vuePress/assets/js/22.1e39d88c.js"><link rel="prefetch" href="/vuePress/assets/js/23.7ac6f456.js"><link rel="prefetch" href="/vuePress/assets/js/24.c956303b.js"><link rel="prefetch" href="/vuePress/assets/js/25.2bd0b721.js"><link rel="prefetch" href="/vuePress/assets/js/26.9686167d.js"><link rel="prefetch" href="/vuePress/assets/js/27.e2cb0c5c.js"><link rel="prefetch" href="/vuePress/assets/js/28.dd79fb56.js"><link rel="prefetch" href="/vuePress/assets/js/29.49b6efc1.js"><link rel="prefetch" href="/vuePress/assets/js/3.31f05eda.js"><link rel="prefetch" href="/vuePress/assets/js/30.c4178ef3.js"><link rel="prefetch" href="/vuePress/assets/js/31.754950fb.js"><link rel="prefetch" href="/vuePress/assets/js/32.e62a0b7d.js"><link rel="prefetch" href="/vuePress/assets/js/33.68ca1522.js"><link rel="prefetch" href="/vuePress/assets/js/34.103d10a4.js"><link rel="prefetch" href="/vuePress/assets/js/35.602ecfe5.js"><link rel="prefetch" href="/vuePress/assets/js/36.673a66f2.js"><link rel="prefetch" href="/vuePress/assets/js/37.b31bca7c.js"><link rel="prefetch" href="/vuePress/assets/js/38.44d270f0.js"><link rel="prefetch" href="/vuePress/assets/js/39.837bb2c8.js"><link rel="prefetch" href="/vuePress/assets/js/4.00b136f5.js"><link rel="prefetch" href="/vuePress/assets/js/40.228c1383.js"><link rel="prefetch" href="/vuePress/assets/js/41.f2b83f4e.js"><link rel="prefetch" href="/vuePress/assets/js/42.4f12763a.js"><link rel="prefetch" href="/vuePress/assets/js/43.46a20db1.js"><link rel="prefetch" href="/vuePress/assets/js/44.2c765d78.js"><link rel="prefetch" href="/vuePress/assets/js/45.53c18973.js"><link rel="prefetch" href="/vuePress/assets/js/46.69eb3430.js"><link rel="prefetch" href="/vuePress/assets/js/47.5df0f25b.js"><link rel="prefetch" href="/vuePress/assets/js/48.794cc3ba.js"><link rel="prefetch" href="/vuePress/assets/js/49.b509d5b8.js"><link rel="prefetch" href="/vuePress/assets/js/5.752f565f.js"><link rel="prefetch" href="/vuePress/assets/js/50.578cf17c.js"><link rel="prefetch" href="/vuePress/assets/js/51.6d07b28b.js"><link rel="prefetch" href="/vuePress/assets/js/52.d4d58a10.js"><link rel="prefetch" href="/vuePress/assets/js/53.fae18b8c.js"><link rel="prefetch" href="/vuePress/assets/js/54.9ee7edf6.js"><link rel="prefetch" href="/vuePress/assets/js/55.46047c46.js"><link rel="prefetch" href="/vuePress/assets/js/56.9b7ce45b.js"><link rel="prefetch" href="/vuePress/assets/js/57.3093b3d2.js"><link rel="prefetch" href="/vuePress/assets/js/58.40e08d5e.js"><link rel="prefetch" href="/vuePress/assets/js/59.e43561e2.js"><link rel="prefetch" href="/vuePress/assets/js/6.cdea1a9c.js"><link rel="prefetch" href="/vuePress/assets/js/60.2d379e66.js"><link rel="prefetch" href="/vuePress/assets/js/61.c59a2bb7.js"><link rel="prefetch" href="/vuePress/assets/js/62.5d0f0447.js"><link rel="prefetch" href="/vuePress/assets/js/63.65094e09.js"><link rel="prefetch" href="/vuePress/assets/js/64.d6047d16.js"><link rel="prefetch" href="/vuePress/assets/js/65.4d5cf55c.js"><link rel="prefetch" href="/vuePress/assets/js/66.4fbc6b76.js"><link rel="prefetch" href="/vuePress/assets/js/7.85a1ac79.js"><link rel="prefetch" href="/vuePress/assets/js/8.4c2ffbbd.js"><link rel="prefetch" href="/vuePress/assets/js/9.b374835d.js">
+    <link rel="stylesheet" href="/vuePress/assets/css/0.styles.0cb5e717.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuePress/" class="home-link router-link-active"><img src="/vuePress/img/羊驼.jpg" alt="洋洋" class="logo"> <span class="site-name can-hide">洋洋</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuePress/start/" class="nav-link">
+  开始
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="js" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="js" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuePress/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vue3/" class="nav-link">
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/openlayer/" class="nav-link">
+  openlayer
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/cesium/" class="nav-link router-link-active">
+  cesium
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vscode/" class="nav-link">
+  vscode
+</a></li></ul></div></div><div class="nav-item"><a href="/vuePress/css/" class="nav-link">
+  css
+</a></div><div class="nav-item"><a href="/vuePress/nginx/" class="nav-link">
+  nginx
+</a></div><div class="nav-item"><a href="/vuePress/jenkins/" class="nav-link">
+  jenkins
+</a></div><div class="nav-item"><a href="https://github.com/18595439829/vuePress" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuePress/start/" class="nav-link">
+  开始
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="js" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="js" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuePress/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vue3/" class="nav-link">
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/openlayer/" class="nav-link">
+  openlayer
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/cesium/" class="nav-link router-link-active">
+  cesium
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vscode/" class="nav-link">
+  vscode
+</a></li></ul></div></div><div class="nav-item"><a href="/vuePress/css/" class="nav-link">
+  css
+</a></div><div class="nav-item"><a href="/vuePress/nginx/" class="nav-link">
+  nginx
+</a></div><div class="nav-item"><a href="/vuePress/jenkins/" class="nav-link">
+  jenkins
+</a></div><div class="nav-item"><a href="https://github.com/18595439829/vuePress" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/vuePress/cesium/init.html" aria-current="page" class="active sidebar-link">Cesium初始化viewer示例(一)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress/cesium/init.html#_1-生成viewer" class="sidebar-link">1.生成viewer</a></li></ul></li><li><a href="/vuePress/cesium/api.html" class="sidebar-link">Cesium常用地图操作(二)</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="cesium初始化viewer示例-一"><a href="#cesium初始化viewer示例-一" class="header-anchor">#</a> Cesium初始化viewer示例(一)</h1> <p>官方文档 <a href="https://cesium.com/docs/analytics-sdk-reference/Viewer.html?classFilter=viewer" target="_blank" rel="noopener noreferrer">https://cesium.com/docs/analytics-sdk-reference/Viewer.html?classFilter=viewer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+中文网 <a href="http://cesium.xin/cesium/cn/Documentation1.62/Viewer.html?classFilter=viewer" target="_blank" rel="noopener noreferrer">http://cesium.xin/cesium/cn/Documentation1.62/Viewer.html?classFilter=viewer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="_1-生成viewer"><a href="#_1-生成viewer" class="header-anchor">#</a> 1.生成viewer</h2> <p>参考: <a href="https://blog.csdn.net/zlx312/article/details/78273537" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/zlx312/article/details/78273537<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot; /&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  mounted() {
+    this.init();
+  },
+  methods: {
+    init() {
+      const viewer = new Cesium.Viewer('app', {
+        animation: false, // 是否创建动画小器件，左下角仪表
+        baseLayerPicker: false, // 是否显示图层选择器
+        fullscreenButton: false, // 是否显示全屏按钮
+        geocoder: false, // 是否显示geocoder小器件，右上角查询按钮
+        homeButton: false, // 是否显示Home按钮
+        infoBox: false, // 是否显示信息框
+        sceneModePicker: false, // 是否显示3D/2D选择器
+        selectionIndicator: false, // 是否显示选取指示器组件
+        timeline: false, // 是否显示时间轴
+        navigationHelpButton: false, // 是否显示右上角的帮助按钮
+        scene3DOnly: true, // 如果设置为true，则所有几何图形以3D模式绘制以节约GPU资源
+        clock: new Cesium.Clock(), // 用于控制当前时间的时钟对象
+        selectedImageryProviderViewModel: undefined, // 当前图像图层的显示模型，仅baseLayerPicker设为true有意义
+        imageryProviderViewModels: Cesium.createDefaultImageryProviderViewModels(), // 可供BaseLayerPicker选择的图像图层ProviderViewModel数组
+        selectedTerrainProviderViewModel: undefined, // 当前地形图层的显示模型，仅baseLayerPicker设为true有意义
+        terrainProviderViewModels: Cesium.createDefaultTerrainProviderViewModels(), // 可供BaseLayerPicker选择的地形图层ProviderViewModel数组
+        imageryProvider: new Cesium.OpenStreetMapImageryProvider({
+          credit: '',
+          url: '//192.168.0.89:5539/planet-satellite/',
+        }), // 图像图层提供者，仅baseLayerPicker设为false有意义
+        terrainProvider: new Cesium.EllipsoidTerrainProvider(), // 地形图层提供者，仅baseLayerPicker设为false有意义
+        skyBox: new Cesium.SkyBox({
+          sources: {
+            positiveX: 'Cesium-1.7.1/Skybox/px.jpg',
+            negativeX: 'Cesium-1.7.1/Skybox/mx.jpg',
+            positiveY: 'Cesium-1.7.1/Skybox/py.jpg',
+            negativeY: 'Cesium-1.7.1/Skybox/my.jpg',
+            positiveZ: 'Cesium-1.7.1/Skybox/pz.jpg',
+            negativeZ: 'Cesium-1.7.1/Skybox/mz.jpg',
+          },
+        }), // 用于渲染星空的SkyBox对象
+        fullscreenElement: document.body, // 全屏时渲染的HTML元素,
+        useDefaultRenderLoop: true, // 如果需要控制渲染循环，则设为true
+        targetFrameRate: undefined, // 使用默认render loop时的帧率
+        showRenderLoopErrors: false, // 如果设为true，将在一个HTML面板中显示错误信息
+        automaticallyTrackDataSourceClocks: true, // 自动追踪最近添加的数据源的时钟设置
+        contextOptions: undefined, // 传递给Scene对象的上下文参数（scene.options）
+        sceneMode: Cesium.SceneMode.SCENE3D, // 初始场景模式
+        mapProjection: new Cesium.WebMercatorProjection(), // 地图投影体系
+        dataSources: new Cesium.DataSourceCollection(),
+        // 需要进行可视化的数据源的集合
+      });
+      const { scene } = viewer;
+      scene.screenSpaceCameraController.minimumZoomDistance = 50; // 地图场景最大缩放层级,即地图最小允许展示的颗粒度
+      scene.screenSpaceCameraController.maximumZoomDistance = 20000; // 地图场景最小缩放层级,即地图最大允许展示的颗粒度
+      // 设置相机视角
+      scene.camera.flyTo({
+        duration: 1, // 飞的过渡动画时间
+        destination: Cesium.Cartesian3.fromDegrees(
+          120.083767, // 地图经度
+          30.235533, // 地图维度
+          7000, // 地图高度
+        ),
+        orientation: {
+          // heading: Cesium.Math.toRadians(1000),
+          pitch: Cesium.Math.toRadians(-45), // 视角
+        },
+      });
+      // 亮度设置
+      const stages = viewer.scene.postProcessStages;
+      viewer.scene.brightness = viewer.scene.brightness
+        || stages.add(Cesium.PostProcessStageLibrary.createBrightnessStage());
+      viewer.scene.brightness.enabled = true;
+      viewer.scene.brightness.uniforms.brightness = Number(1); // 1比原图稍暗,数字越小越暗
+    },
+  },
+};
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/vuePress/cesium/api.html">
+        Cesium常用地图操作(二)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuePress/assets/js/app.41c918b9.js" defer></script><script src="/vuePress/assets/js/2.16646843.js" defer></script><script src="/vuePress/assets/js/10.12a39fba.js" defer></script>
+  </body>
+</html>
