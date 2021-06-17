@@ -2,7 +2,7 @@
 home: true
 heroImage: /img/羊驼.jpg
 actionText: 开始
-actionLink: /vue/nginx/
+actionLink: /vue/vuePress/
 features:
 # - title: 个人开发博客
 #   details: 针对在平时开发中碰到的问题,做一个总结。

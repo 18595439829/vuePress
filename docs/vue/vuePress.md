@@ -41,7 +41,7 @@ yarn global add vuepress # 或者：npm install -g vuepress
 home: true   ##是否启用主页
 heroImage: /img/羊驼.jpg    ## 主页的图片
 actionText: 开始    ##  主页功能按钮
-actionLink: /vue/nginx/   ##  主页功能按钮跳转页面路径
+actionLink: /vue/   ##  主页功能按钮跳转页面路径
 features:
 # - title: 个人开发博客
 #   details: 针对在平时开发中碰到的问题,做一个总结。
@@ -116,4 +116,4 @@ vuepress build
 ```
 7. 部署到服务器
 我是用的腾讯云部署的,没有使用官网的githun部署,参考我的另一篇文章
-使用nginx将自己的vue项目部署到服务器上([使用nginx将自己的vue项目部署到服务器上](/vue/nginx/))
+使用nginx将自己的vue项目部署到服务器上([使用nginx将自己的vue项目部署到服务器上](/nginx/nginx/))
