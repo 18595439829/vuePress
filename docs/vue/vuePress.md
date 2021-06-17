@@ -66,7 +66,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ```
 3.  docs文件下下新增.vuepress文件夹
  3.1 .vuepress文件夹下新增pulics文件夹,用来放置静态资源(eg: 图片/音视频)
- 3.2 .vuepress文件夹下新增config.js配置文件![648e66b7112520f5898ac0bdf2eed9d.png](https://upload-images.jianshu.io/upload_images/13491706-b076575feede8386.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ 3.2 .vuepress文件夹下新增config.js配置文件![vuepress配置.png](/img/vuepress配置.png)
 
 ```
  // config.js
