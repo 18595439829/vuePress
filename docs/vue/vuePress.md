@@ -19,7 +19,7 @@ vuepress build .
 yarn global add vuepress # 或者：npm install -g vuepress
 ```
 ### 项目目录   
-*我自己写的博客地址,可以参考着看,更方便理解,链接([http://134.175.115.187/vuePress/](http://134.175.115.187/vuePress/), 用的腾讯云(挺便宜的))*
+*我自己写的博客地址,可以参考着看,更方便理解,[https://18595439829.github.io/vuePress/vue/vuePress.html](https://18595439829.github.io/vuePress/vue/vuePress.html)*
 ```
  docs
    |____ .vuepress  //  构建后dist包,静态资源存放位置
