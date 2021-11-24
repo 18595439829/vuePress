@@ -1,7 +1,7 @@
 # 在vue项目中添加live2d看板娘(花里胡哨)
 *参考"最代码人间蒸发"* [http://www.zuidaima.com/blog/4552783354924032.htm](http://www.zuidaima.com/blog/4552783354924032.htm)
 ## 1.项目结构目录
-![项目目录.png](/img/项目目录.jpg)
+![项目目录.png](/vuePress/img/项目目录.jpg)
 ## 2.live2dw看板娘文件资源地址
 链接: https://pan.baidu.com/s/1gB9o9_HkDpAX2yJlm0IaMA 提取码: k8fr 复制这段内容后打开百度网盘手机App，操作更方便哦
 ## 3.将文件夹下载解压放在public文件目录下;

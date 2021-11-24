@@ -26,7 +26,7 @@
         },
  ]
 ```
-![效果.jpg](/img/效果.jpg)
+![效果.jpg](/vuePress/img/效果.jpg)
 
 ## 1.项目中引入pinyin.js文件
 

@@ -3,7 +3,7 @@
 官方示例 [https://cesium.com/docs/analytics-sdk-reference/EntityCollection.html?classFilter=entity](https://cesium.com/docs/analytics-sdk-reference/EntityCollection.html?classFilter=entity)
 官方文档 [https://cesium.com/docs/analytics-sdk-reference/Billboard.html?classFilter=billboard](https://cesium.com/docs/analytics-sdk-reference/Billboard.html?classFilter=billboard)
 中文网文档 [http://cesium.xin/cesium/cn/Documentation1.62/EntityCollection.html?classFilter=entity](http://cesium.xin/cesium/cn/Documentation1.62/EntityCollection.html?classFilter=entity)
-![广告牌示例.jpg](/img/广告牌示例.jpg)
+![广告牌示例.jpg](/vuePress/img/广告牌示例.jpg)
 ```
 viewer.entities.add({
           id: 'billboard', // feature的id

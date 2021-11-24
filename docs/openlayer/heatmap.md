@@ -1,7 +1,7 @@
 # 使用openlayer添加热力图(vue项目)
 项目地址[https://github.com/18595439829/vuecli3](https://github.com/18595439829/vuecli3)dev分支
 ## 效果示例: 
-![热力图.jpg](/img/热力图.jpg)
+![热力图.jpg](/vuePress/img/热力图.jpg)
 
 ## 1.vue项目中下载ol包
 ```

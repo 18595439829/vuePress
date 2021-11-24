@@ -2,9 +2,9 @@
 项目地址[https://github.com/18595439829/vuecli3](https://github.com/18595439829/vuecli3)dev分支
 ## 效果实例
 矩形选中
-![矩形选中.jpg](/img/矩形选中.jpg)
+![矩形选中.jpg](/vuePress/img/矩形选中.jpg)
 不规则选中
-![不规则选中.jpg](/img/不规则选中.jpg)
+![不规则选中.jpg](/vuePress/img/不规则选中.jpg)
 
 ## 1.vue项目中下载ol包
 ```

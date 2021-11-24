@@ -34,7 +34,7 @@ yarn global add vuepress # 或者：npm install -g vuepress
  README.md  // git项目自带文件
 ```
 ## 开始
-1.  docs文件夹下新增README.md文件
+### 1.  docs文件夹下新增README.md文件
 ```
 #  README.md
 ---
@@ -52,7 +52,7 @@ features:
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 ```
-2. docs文件夹下新增package.json配置文件
+### 2. docs文件夹下新增package.json配置文件
 ```
 {
     "name": "docs",
@@ -64,9 +64,9 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
     }
 }
 ```
-3.  docs文件下下新增.vuepress文件夹
- 3.1 .vuepress文件夹下新增pulics文件夹,用来放置静态资源(eg: 图片/音视频)
- 3.2 .vuepress文件夹下新增config.js配置文件![vuepress配置.png](/img/vuepress配置.png)
+### 3.  docs文件下新增.vuepress文件夹
+3.1 .vuepress文件夹下新增pulics文件夹,用来放置静态资源(eg: 图片/音视频)
+3.2 .vuepress文件夹下新增config.js配置文件![vuepress配置.png](/vuePress/img/vuepress配置.png)
 
 ```
  // config.js
@@ -115,5 +115,5 @@ vuepress build
 // 或 yarn docs:build
 ```
 7. 部署到服务器
-我是用的腾讯云部署的,没有使用官网的githun部署,参考我的另一篇文章
+我是用的腾讯云部署的,没有使用官网的github部署,参考我的另一篇文章
 使用nginx将自己的vue项目部署到服务器上([使用nginx将自己的vue项目部署到服务器上](/nginx/nginx/))
