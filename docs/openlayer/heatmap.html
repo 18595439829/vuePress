@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用openlayer添加热力图(vue项目)</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.fc4b4af6.css" as="style"><link rel="preload" href="/assets/js/app.05f59982.js" as="script"><link rel="preload" href="/assets/js/2.16646843.js" as="script"><link rel="preload" href="/assets/js/34.a5222333.js" as="script"><link rel="prefetch" href="/assets/js/10.ee757afe.js"><link rel="prefetch" href="/assets/js/11.455c81fe.js"><link rel="prefetch" href="/assets/js/12.6f1ae68b.js"><link rel="prefetch" href="/assets/js/13.5dd19cc2.js"><link rel="prefetch" href="/assets/js/14.00c28ab5.js"><link rel="prefetch" href="/assets/js/15.a57acc36.js"><link rel="prefetch" href="/assets/js/16.6fee5067.js"><link rel="prefetch" href="/assets/js/17.eec27a3d.js"><link rel="prefetch" href="/assets/js/18.6e1ac529.js"><link rel="prefetch" href="/assets/js/19.3437123d.js"><link rel="prefetch" href="/assets/js/20.39964c8c.js"><link rel="prefetch" href="/assets/js/21.82f59e5d.js"><link rel="prefetch" href="/assets/js/22.eac744f4.js"><link rel="prefetch" href="/assets/js/23.1a454da0.js"><link rel="prefetch" href="/assets/js/24.58043b6a.js"><link rel="prefetch" href="/assets/js/25.484892cf.js"><link rel="prefetch" href="/assets/js/26.8e26f9e4.js"><link rel="prefetch" href="/assets/js/27.e7a2c7e3.js"><link rel="prefetch" href="/assets/js/28.38eaa051.js"><link rel="prefetch" href="/assets/js/29.13674f9d.js"><link rel="prefetch" href="/assets/js/3.bab5a712.js"><link rel="prefetch" href="/assets/js/30.b58f64f0.js"><link rel="prefetch" href="/assets/js/31.95284aef.js"><link rel="prefetch" href="/assets/js/32.bfcc76ea.js"><link rel="prefetch" href="/assets/js/33.5688bf47.js"><link rel="prefetch" href="/assets/js/35.9c3fa872.js"><link rel="prefetch" href="/assets/js/36.8853c218.js"><link rel="prefetch" href="/assets/js/37.8371f868.js"><link rel="prefetch" href="/assets/js/38.f5562d66.js"><link rel="prefetch" href="/assets/js/39.35bbccf8.js"><link rel="prefetch" href="/assets/js/4.7e8f51ec.js"><link rel="prefetch" href="/assets/js/40.e861c210.js"><link rel="prefetch" href="/assets/js/41.912b4410.js"><link rel="prefetch" href="/assets/js/42.b3058628.js"><link rel="prefetch" href="/assets/js/43.7f629b4a.js"><link rel="prefetch" href="/assets/js/44.a940a8a9.js"><link rel="prefetch" href="/assets/js/45.29f2d7ef.js"><link rel="prefetch" href="/assets/js/46.5751defc.js"><link rel="prefetch" href="/assets/js/47.37ef3b92.js"><link rel="prefetch" href="/assets/js/48.0fb34cd5.js"><link rel="prefetch" href="/assets/js/49.b7dafa71.js"><link rel="prefetch" href="/assets/js/5.752f565f.js"><link rel="prefetch" href="/assets/js/50.f977d25e.js"><link rel="prefetch" href="/assets/js/51.ae8eb011.js"><link rel="prefetch" href="/assets/js/52.f601b7a1.js"><link rel="prefetch" href="/assets/js/53.b3cd8d26.js"><link rel="prefetch" href="/assets/js/54.6dfabd30.js"><link rel="prefetch" href="/assets/js/55.016e8027.js"><link rel="prefetch" href="/assets/js/56.b685f7ce.js"><link rel="prefetch" href="/assets/js/57.fbb5e467.js"><link rel="prefetch" href="/assets/js/58.e60d455b.js"><link rel="prefetch" href="/assets/js/59.812ea121.js"><link rel="prefetch" href="/assets/js/6.cdea1a9c.js"><link rel="prefetch" href="/assets/js/60.8abf8644.js"><link rel="prefetch" href="/assets/js/61.21654fec.js"><link rel="prefetch" href="/assets/js/62.754967ef.js"><link rel="prefetch" href="/assets/js/63.fc6f6014.js"><link rel="prefetch" href="/assets/js/64.4e603166.js"><link rel="prefetch" href="/assets/js/65.5842dd1e.js"><link rel="prefetch" href="/assets/js/66.10a5f902.js"><link rel="prefetch" href="/assets/js/67.a017bb4d.js"><link rel="prefetch" href="/assets/js/7.96f35e9c.js"><link rel="prefetch" href="/assets/js/8.b251918f.js"><link rel="prefetch" href="/assets/js/9.dfe17218.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fc4b4af6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="使用openlayer添加热力图-vue项目"><a href="#使用openlayer添加热力图-vue项目" class="header-anchor">#</a> 使用openlayer添加热力图(vue项目)</h1> <p>项目地址<a href="https://github.com/18595439829/vuecli3" target="_blank" rel="noopener noreferrer">https://github.com/18595439829/vuecli3<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>dev分支</p> <h2 id="效果示例"><a href="#效果示例" class="header-anchor">#</a> 效果示例:</h2> <p><img src="/img/%E7%83%AD%E5%8A%9B%E5%9B%BE.jpg" alt="热力图.jpg"></p> <h2 id="_1-vue项目中下载ol包"><a href="#_1-vue项目中下载ol包" class="header-anchor">#</a> 1.vue项目中下载ol包</h2> <div class="language- extra-class"><pre class="language-text"><code>npm install ol --save
+</code></pre></div><h2 id="_2-新建一个js文件-如-heatmap-js-引入ol必要的组件"><a href="#_2-新建一个js文件-如-heatmap-js-引入ol必要的组件" class="header-anchor">#</a> 2.新建一个js文件,如:heatMap.js;引入ol必要的组件</h2> <div class="language- extra-class"><pre class="language-text"><code>// heatMap.js
+import &quot;ol/ol.css&quot;;
+import Map from &quot;ol/Map&quot;;
+import View from &quot;ol/View&quot;;
+import OSM from &quot;ol/source/OSM.js&quot;;
+import Point from &quot;ol/geom/Point.js&quot;;
+import VectorSource from &quot;ol/source/Vector.js&quot;;
+import Feature from &quot;ol/Feature.js&quot;;
+import { fromLonLat } from &quot;ol/proj.js&quot;;
+import { Heatmap as HeatmapLayer, Tile as TileLayer } from &quot;ol/layer&quot;;
+
+export default class Heat {
+  constructor() {
+    // 地图底图源使用OSM,当然也可以用其他风格的源
+    const raster = new TileLayer({
+      source: new OSM(),
+    });
+    this.map = new Map({
+      layers: [raster], // 地图图层
+      target: &quot;map&quot;, // 地图挂载的页面元素id,即下文HeatMap.vue中id=&quot;map&quot;的div元素
+      view: new View({
+        center: fromLonLat([120.32714457090765, 30.30569628128095]), // 地图可视区域中心点,fromLonLat函数用于将经纬度转化为ol可正常识别的坐标
+        zoom: 11, // 地图缩放级别
+      }),
+    });
+  }
+  add(heatData) {
+    let source = new VectorSource(); // 新生成图层源,用于存放热力图图层
+    heatData.features.forEach((item) =&gt; { // 遍历热力图数据,生成热力图feature
+      const feature = new Feature({
+        geometry: new Point(fromLonLat(item.coordinates)),
+        weight: item.weight,
+      });
+      source.addFeature(feature);
+    });
+    this.heatLayer = new HeatmapLayer({ //新生成热力图图层,存放热力图feature
+      // 矢量数据源
+      source,
+      blur: 10, // 模糊尺寸
+      radius: 10, // 热点半径
+      weight(feature) {
+        const weight = feature.get(&quot;weight&quot;); //获取feature的weight参数值,此处weight不可变更为其他参数,否则失效(暂时不明原因);
+        const magnitude = weight / 1;
+        return magnitude;
+      },
+    });
+    this.map.addLayer(this.heatLayer); // 将热力图添加在地图上
+  }
+  clear() {
+    this.map.removeLayer(this.heatLayer); // 将热力图从地图上移除
+  }
+}
+
+</code></pre></div><h2 id="_3-新建一个vue文件-如-heatmap-vue"><a href="#_3-新建一个vue文件-如-heatmap-vue" class="header-anchor">#</a> 3.新建一个vue文件,如: HeatMap.vue</h2> <div class="language- extra-class"><pre class="language-text"><code>// HeatMap.vue
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;div id=&quot;map&quot; :class=&quot;$style['map']&quot;&gt;&lt;/div&gt;
+    &lt;Button @click=&quot;add&quot;&gt;添加热力图&lt;/Button&gt;
+    &lt;Button @click=&quot;clear&quot;&gt;清除热力图&lt;/Button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import HeatMap from &quot;@/views/ol/js/heatMap.js&quot;;
+
+export default {
+  name: &quot;HeatMap&quot;,
+  data() {
+    return {
+      heatMap: null,
+      // 热力图假数据
+      heatData: {
+        type: &quot;FeatureCollection&quot;,
+        features: [
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.10878812064284, 30.214101248758016],
+            weight: 100,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.06299060438137, 30.223642397979155],
+            weight: 19,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.01623897319779, 30.354356142308763],
+            weight: 419,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [20.32714457090765, 30.30569628128095],
+            weight: 319,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 719,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 519,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 319,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 139,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 129,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 190,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 189,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 1,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 119,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.32714457090765, 30.30569628128095],
+            weight: 200,
+          },
+          {
+            type: &quot;Point&quot;,
+            coordinates: [120.11642104001974, 30.204560099536877],
+            weight: 300,
+          },
+        ],
+      },
+    };
+  },
+  mounted() {
+    this.initMap();
+  },
+  methods: {
+// 初始化地图,生成地图服务
+    initMap() {
+      this.heatMap = new HeatMap();
+    },
+// 添加热力图
+    add() {
+      this.heatMap.add(this.heatData);
+    },
+// 清除热力图
+    clear() {
+      this.heatMap.clear();
+    }
+  },
+};
+&lt;/script&gt;
+
+&lt;style lang=&quot;less&quot; module&gt;
+.map {
+  width: 100%;
+  height: 500px;
+}
+&lt;/style&gt;
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.05f59982.js" defer></script><script src="/assets/js/2.16646843.js" defer></script><script src="/assets/js/34.a5222333.js" defer></script>
+  </body>
+</html>

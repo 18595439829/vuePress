@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cesium初始化viewer示例(一)</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.fc4b4af6.css" as="style"><link rel="preload" href="/assets/js/app.05f59982.js" as="script"><link rel="preload" href="/assets/js/2.16646843.js" as="script"><link rel="preload" href="/assets/js/11.455c81fe.js" as="script"><link rel="prefetch" href="/assets/js/10.ee757afe.js"><link rel="prefetch" href="/assets/js/12.6f1ae68b.js"><link rel="prefetch" href="/assets/js/13.5dd19cc2.js"><link rel="prefetch" href="/assets/js/14.00c28ab5.js"><link rel="prefetch" href="/assets/js/15.a57acc36.js"><link rel="prefetch" href="/assets/js/16.6fee5067.js"><link rel="prefetch" href="/assets/js/17.eec27a3d.js"><link rel="prefetch" href="/assets/js/18.6e1ac529.js"><link rel="prefetch" href="/assets/js/19.3437123d.js"><link rel="prefetch" href="/assets/js/20.39964c8c.js"><link rel="prefetch" href="/assets/js/21.82f59e5d.js"><link rel="prefetch" href="/assets/js/22.eac744f4.js"><link rel="prefetch" href="/assets/js/23.1a454da0.js"><link rel="prefetch" href="/assets/js/24.58043b6a.js"><link rel="prefetch" href="/assets/js/25.484892cf.js"><link rel="prefetch" href="/assets/js/26.8e26f9e4.js"><link rel="prefetch" href="/assets/js/27.e7a2c7e3.js"><link rel="prefetch" href="/assets/js/28.38eaa051.js"><link rel="prefetch" href="/assets/js/29.13674f9d.js"><link rel="prefetch" href="/assets/js/3.bab5a712.js"><link rel="prefetch" href="/assets/js/30.b58f64f0.js"><link rel="prefetch" href="/assets/js/31.95284aef.js"><link rel="prefetch" href="/assets/js/32.bfcc76ea.js"><link rel="prefetch" href="/assets/js/33.5688bf47.js"><link rel="prefetch" href="/assets/js/34.a5222333.js"><link rel="prefetch" href="/assets/js/35.9c3fa872.js"><link rel="prefetch" href="/assets/js/36.8853c218.js"><link rel="prefetch" href="/assets/js/37.8371f868.js"><link rel="prefetch" href="/assets/js/38.f5562d66.js"><link rel="prefetch" href="/assets/js/39.35bbccf8.js"><link rel="prefetch" href="/assets/js/4.7e8f51ec.js"><link rel="prefetch" href="/assets/js/40.e861c210.js"><link rel="prefetch" href="/assets/js/41.912b4410.js"><link rel="prefetch" href="/assets/js/42.b3058628.js"><link rel="prefetch" href="/assets/js/43.7f629b4a.js"><link rel="prefetch" href="/assets/js/44.a940a8a9.js"><link rel="prefetch" href="/assets/js/45.29f2d7ef.js"><link rel="prefetch" href="/assets/js/46.5751defc.js"><link rel="prefetch" href="/assets/js/47.37ef3b92.js"><link rel="prefetch" href="/assets/js/48.0fb34cd5.js"><link rel="prefetch" href="/assets/js/49.b7dafa71.js"><link rel="prefetch" href="/assets/js/5.752f565f.js"><link rel="prefetch" href="/assets/js/50.f977d25e.js"><link rel="prefetch" href="/assets/js/51.ae8eb011.js"><link rel="prefetch" href="/assets/js/52.f601b7a1.js"><link rel="prefetch" href="/assets/js/53.b3cd8d26.js"><link rel="prefetch" href="/assets/js/54.6dfabd30.js"><link rel="prefetch" href="/assets/js/55.016e8027.js"><link rel="prefetch" href="/assets/js/56.b685f7ce.js"><link rel="prefetch" href="/assets/js/57.fbb5e467.js"><link rel="prefetch" href="/assets/js/58.e60d455b.js"><link rel="prefetch" href="/assets/js/59.812ea121.js"><link rel="prefetch" href="/assets/js/6.cdea1a9c.js"><link rel="prefetch" href="/assets/js/60.8abf8644.js"><link rel="prefetch" href="/assets/js/61.21654fec.js"><link rel="prefetch" href="/assets/js/62.754967ef.js"><link rel="prefetch" href="/assets/js/63.fc6f6014.js"><link rel="prefetch" href="/assets/js/64.4e603166.js"><link rel="prefetch" href="/assets/js/65.5842dd1e.js"><link rel="prefetch" href="/assets/js/66.10a5f902.js"><link rel="prefetch" href="/assets/js/67.a017bb4d.js"><link rel="prefetch" href="/assets/js/7.96f35e9c.js"><link rel="prefetch" href="/assets/js/8.b251918f.js"><link rel="prefetch" href="/assets/js/9.dfe17218.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fc4b4af6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="cesium初始化viewer示例-一"><a href="#cesium初始化viewer示例-一" class="header-anchor">#</a> Cesium初始化viewer示例(一)</h1> <p>官方文档 <a href="https://cesium.com/docs/analytics-sdk-reference/Viewer.html?classFilter=viewer" target="_blank" rel="noopener noreferrer">https://cesium.com/docs/analytics-sdk-reference/Viewer.html?classFilter=viewer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+中文网 <a href="http://cesium.xin/cesium/cn/Documentation1.62/Viewer.html?classFilter=viewer" target="_blank" rel="noopener noreferrer">http://cesium.xin/cesium/cn/Documentation1.62/Viewer.html?classFilter=viewer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="_1-生成viewer"><a href="#_1-生成viewer" class="header-anchor">#</a> 1.生成viewer</h2> <p>参考: <a href="https://blog.csdn.net/zlx312/article/details/78273537" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/zlx312/article/details/78273537<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot; /&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  mounted() {
+    this.init();
+  },
+  methods: {
+    init() {
+      const viewer = new Cesium.Viewer('app', {
+        animation: false, // 是否创建动画小器件，左下角仪表
+        baseLayerPicker: false, // 是否显示图层选择器
+        fullscreenButton: false, // 是否显示全屏按钮
+        geocoder: false, // 是否显示geocoder小器件，右上角查询按钮
+        homeButton: false, // 是否显示Home按钮
+        infoBox: false, // 是否显示信息框
+        sceneModePicker: false, // 是否显示3D/2D选择器
+        selectionIndicator: false, // 是否显示选取指示器组件
+        timeline: false, // 是否显示时间轴
+        navigationHelpButton: false, // 是否显示右上角的帮助按钮
+        scene3DOnly: true, // 如果设置为true，则所有几何图形以3D模式绘制以节约GPU资源
+        clock: new Cesium.Clock(), // 用于控制当前时间的时钟对象
+        selectedImageryProviderViewModel: undefined, // 当前图像图层的显示模型，仅baseLayerPicker设为true有意义
+        imageryProviderViewModels: Cesium.createDefaultImageryProviderViewModels(), // 可供BaseLayerPicker选择的图像图层ProviderViewModel数组
+        selectedTerrainProviderViewModel: undefined, // 当前地形图层的显示模型，仅baseLayerPicker设为true有意义
+        terrainProviderViewModels: Cesium.createDefaultTerrainProviderViewModels(), // 可供BaseLayerPicker选择的地形图层ProviderViewModel数组
+        imageryProvider: new Cesium.OpenStreetMapImageryProvider({
+          credit: '',
+          url: '//192.168.0.89:5539/planet-satellite/',
+        }), // 图像图层提供者，仅baseLayerPicker设为false有意义
+        terrainProvider: new Cesium.EllipsoidTerrainProvider(), // 地形图层提供者，仅baseLayerPicker设为false有意义
+        skyBox: new Cesium.SkyBox({
+          sources: {
+            positiveX: 'Cesium-1.7.1/Skybox/px.jpg',
+            negativeX: 'Cesium-1.7.1/Skybox/mx.jpg',
+            positiveY: 'Cesium-1.7.1/Skybox/py.jpg',
+            negativeY: 'Cesium-1.7.1/Skybox/my.jpg',
+            positiveZ: 'Cesium-1.7.1/Skybox/pz.jpg',
+            negativeZ: 'Cesium-1.7.1/Skybox/mz.jpg',
+          },
+        }), // 用于渲染星空的SkyBox对象
+        fullscreenElement: document.body, // 全屏时渲染的HTML元素,
+        useDefaultRenderLoop: true, // 如果需要控制渲染循环，则设为true
+        targetFrameRate: undefined, // 使用默认render loop时的帧率
+        showRenderLoopErrors: false, // 如果设为true，将在一个HTML面板中显示错误信息
+        automaticallyTrackDataSourceClocks: true, // 自动追踪最近添加的数据源的时钟设置
+        contextOptions: undefined, // 传递给Scene对象的上下文参数（scene.options）
+        sceneMode: Cesium.SceneMode.SCENE3D, // 初始场景模式
+        mapProjection: new Cesium.WebMercatorProjection(), // 地图投影体系
+        dataSources: new Cesium.DataSourceCollection(),
+        // 需要进行可视化的数据源的集合
+      });
+      const { scene } = viewer;
+      scene.screenSpaceCameraController.minimumZoomDistance = 50; // 地图场景最大缩放层级,即地图最小允许展示的颗粒度
+      scene.screenSpaceCameraController.maximumZoomDistance = 20000; // 地图场景最小缩放层级,即地图最大允许展示的颗粒度
+      // 设置相机视角
+      scene.camera.flyTo({
+        duration: 1, // 飞的过渡动画时间
+        destination: Cesium.Cartesian3.fromDegrees(
+          120.083767, // 地图经度
+          30.235533, // 地图维度
+          7000, // 地图高度
+        ),
+        orientation: {
+          // heading: Cesium.Math.toRadians(1000),
+          pitch: Cesium.Math.toRadians(-45), // 视角
+        },
+      });
+      // 亮度设置
+      const stages = viewer.scene.postProcessStages;
+      viewer.scene.brightness = viewer.scene.brightness
+        || stages.add(Cesium.PostProcessStageLibrary.createBrightnessStage());
+      viewer.scene.brightness.enabled = true;
+      viewer.scene.brightness.uniforms.brightness = Number(1); // 1比原图稍暗,数字越小越暗
+    },
+  },
+};
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.05f59982.js" defer></script><script src="/assets/js/2.16646843.js" defer></script><script src="/assets/js/11.455c81fe.js" defer></script>
+  </body>
+</html>

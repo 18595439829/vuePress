@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用openlayer使用画图(Draw)功能(vue项目)</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.fc4b4af6.css" as="style"><link rel="preload" href="/assets/js/app.05f59982.js" as="script"><link rel="preload" href="/assets/js/2.16646843.js" as="script"><link rel="preload" href="/assets/js/32.bfcc76ea.js" as="script"><link rel="prefetch" href="/assets/js/10.ee757afe.js"><link rel="prefetch" href="/assets/js/11.455c81fe.js"><link rel="prefetch" href="/assets/js/12.6f1ae68b.js"><link rel="prefetch" href="/assets/js/13.5dd19cc2.js"><link rel="prefetch" href="/assets/js/14.00c28ab5.js"><link rel="prefetch" href="/assets/js/15.a57acc36.js"><link rel="prefetch" href="/assets/js/16.6fee5067.js"><link rel="prefetch" href="/assets/js/17.eec27a3d.js"><link rel="prefetch" href="/assets/js/18.6e1ac529.js"><link rel="prefetch" href="/assets/js/19.3437123d.js"><link rel="prefetch" href="/assets/js/20.39964c8c.js"><link rel="prefetch" href="/assets/js/21.82f59e5d.js"><link rel="prefetch" href="/assets/js/22.eac744f4.js"><link rel="prefetch" href="/assets/js/23.1a454da0.js"><link rel="prefetch" href="/assets/js/24.58043b6a.js"><link rel="prefetch" href="/assets/js/25.484892cf.js"><link rel="prefetch" href="/assets/js/26.8e26f9e4.js"><link rel="prefetch" href="/assets/js/27.e7a2c7e3.js"><link rel="prefetch" href="/assets/js/28.38eaa051.js"><link rel="prefetch" href="/assets/js/29.13674f9d.js"><link rel="prefetch" href="/assets/js/3.bab5a712.js"><link rel="prefetch" href="/assets/js/30.b58f64f0.js"><link rel="prefetch" href="/assets/js/31.95284aef.js"><link rel="prefetch" href="/assets/js/33.5688bf47.js"><link rel="prefetch" href="/assets/js/34.a5222333.js"><link rel="prefetch" href="/assets/js/35.9c3fa872.js"><link rel="prefetch" href="/assets/js/36.8853c218.js"><link rel="prefetch" href="/assets/js/37.8371f868.js"><link rel="prefetch" href="/assets/js/38.f5562d66.js"><link rel="prefetch" href="/assets/js/39.35bbccf8.js"><link rel="prefetch" href="/assets/js/4.7e8f51ec.js"><link rel="prefetch" href="/assets/js/40.e861c210.js"><link rel="prefetch" href="/assets/js/41.912b4410.js"><link rel="prefetch" href="/assets/js/42.b3058628.js"><link rel="prefetch" href="/assets/js/43.7f629b4a.js"><link rel="prefetch" href="/assets/js/44.a940a8a9.js"><link rel="prefetch" href="/assets/js/45.29f2d7ef.js"><link rel="prefetch" href="/assets/js/46.5751defc.js"><link rel="prefetch" href="/assets/js/47.37ef3b92.js"><link rel="prefetch" href="/assets/js/48.0fb34cd5.js"><link rel="prefetch" href="/assets/js/49.b7dafa71.js"><link rel="prefetch" href="/assets/js/5.752f565f.js"><link rel="prefetch" href="/assets/js/50.f977d25e.js"><link rel="prefetch" href="/assets/js/51.ae8eb011.js"><link rel="prefetch" href="/assets/js/52.f601b7a1.js"><link rel="prefetch" href="/assets/js/53.b3cd8d26.js"><link rel="prefetch" href="/assets/js/54.6dfabd30.js"><link rel="prefetch" href="/assets/js/55.016e8027.js"><link rel="prefetch" href="/assets/js/56.b685f7ce.js"><link rel="prefetch" href="/assets/js/57.fbb5e467.js"><link rel="prefetch" href="/assets/js/58.e60d455b.js"><link rel="prefetch" href="/assets/js/59.812ea121.js"><link rel="prefetch" href="/assets/js/6.cdea1a9c.js"><link rel="prefetch" href="/assets/js/60.8abf8644.js"><link rel="prefetch" href="/assets/js/61.21654fec.js"><link rel="prefetch" href="/assets/js/62.754967ef.js"><link rel="prefetch" href="/assets/js/63.fc6f6014.js"><link rel="prefetch" href="/assets/js/64.4e603166.js"><link rel="prefetch" href="/assets/js/65.5842dd1e.js"><link rel="prefetch" href="/assets/js/66.10a5f902.js"><link rel="prefetch" href="/assets/js/67.a017bb4d.js"><link rel="prefetch" href="/assets/js/7.96f35e9c.js"><link rel="prefetch" href="/assets/js/8.b251918f.js"><link rel="prefetch" href="/assets/js/9.dfe17218.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.fc4b4af6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="使用openlayer使用画图-draw-功能-vue项目"><a href="#使用openlayer使用画图-draw-功能-vue项目" class="header-anchor">#</a> 使用openlayer使用画图(Draw)功能(vue项目)</h1> <p>项目地址<a href="https://github.com/18595439829/vuecli3" target="_blank" rel="noopener noreferrer">https://github.com/18595439829/vuecli3<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>dev分支</p> <h2 id="效果实例"><a href="#效果实例" class="header-anchor">#</a> 效果实例</h2> <p>矩形选中
+<img src="/img/%E7%9F%A9%E5%BD%A2%E9%80%89%E4%B8%AD.jpg" alt="矩形选中.jpg">
+不规则选中
+<img src="/img/%E4%B8%8D%E8%A7%84%E5%88%99%E9%80%89%E4%B8%AD.jpg" alt="不规则选中.jpg"></p> <h2 id="_1-vue项目中下载ol包"><a href="#_1-vue项目中下载ol包" class="header-anchor">#</a> 1.vue项目中下载ol包</h2> <div class="language- extra-class"><pre class="language-text"><code>npm install ol --save
+</code></pre></div><h2 id="_2-新建一个js文件-如-draw-js-引入ol必要的组件"><a href="#_2-新建一个js文件-如-draw-js-引入ol必要的组件" class="header-anchor">#</a> 2.新建一个js文件,如:draw.js;引入ol必要的组件</h2> <div class="language- extra-class"><pre class="language-text"><code>// draw.js
+import &quot;ol/ol.css&quot;;
+import Map from &quot;ol/Map&quot;;
+import View from &quot;ol/View&quot;;
+import { Style, Circle, Fill } from &quot;ol/style&quot;;
+import { fromLonLat } from &quot;ol/proj.js&quot;;
+import { Tile as TileLayer, Vector as VectorLayer } from &quot;ol/layer&quot;;
+import { OSM, Vector as VectorSource } from &quot;ol/source&quot;;
+import uuid from &quot;uuid&quot;;
+import Polygon from &quot;ol/geom/Polygon&quot;;
+import Draw, { createBox } from &quot;ol/interaction/Draw&quot;;
+
+export default class DrawLayer {
+  constructor() {
+    // 底图图层
+    const raster = new TileLayer({
+      source: new OSM(),
+    });
+    this.feature = null; // 画图选中区域feature
+    this.source = new VectorSource({ wrapX: true });
+    // 画图图层
+    this.drawLayer = new VectorLayer({
+      source: this.source,
+    });
+    this.map = new Map({
+      layers: [raster, this.drawLayer],
+      target: &quot;map&quot;,
+      view: new View({
+        center: fromLonLat([120.32714457090765, 30.30569628128095]),
+        zoom: 11,
+      }),
+    });
+    this.map.on(&quot;dblclick&quot;, (e) =&gt; {
+        console.log(&quot;双击666&quot;, e);
+        if (this.draw.getActive()) {
+          this.remove();
+        }
+      });
+  }
+  add() {
+    this.clear(); // 新添加画图之前,将之前所画区域清除
+    // 所画区域为规则形状
+    this.draw = new Draw({
+        id: uuid(),
+        source: this.source,
+        type: &quot;Circle&quot;, // Circle: 所画图形为圆形 Polygon: 所画图形多边形
+        freehand: false,  // true: 拖拽画图; false:点击画图
+        geometryFunction: createBox(), // 当type为&quot;Circle&quot;时,不添加该参数为画圆,添加该参数为画方
+    });
+    //  // 所画区域不规则
+    //  this.draw = new Draw({
+    //   id: uuid(),
+    //    source: this.source,
+    //    type: &quot;Polygon&quot;, // Circle: 所画图形为圆形 Polygon: 所画图形多边形
+    //    freehand: true,  // true: 拖拽画图; false:点击画图
+    //    // geometryFunction: createBox(), // 当type为&quot;Circle&quot;时,不添加该参数为画圆,添加该参数为画方
+    //   });
+    this.draw.on(&quot;drawend&quot;, (e) =&gt; {
+      console.log(&quot;画完了&quot;, e);
+      this.feature = e.feature;
+      this.remove();
+    });
+    this.map.addInteraction(this.draw);
+  }
+  remove() {
+    this.map.removeInteraction(this.draw);
+  }
+  clear() {
+    if (!this.draw || !this.feature) {
+      return;
+    }
+    this.drawLayer.getSource().removeFeature(this.feature);
+    this.feature = null;
+  }
+
+  // 获取选中区域元素
+  get() {
+    if (!this.feature) {
+      return null;
+    }
+    const polygon = this.feature.getGeometry();
+    console.log(&quot;polygon&quot;, polygon);
+    const extent = polygon.getExtent();
+    return extent;
+  }
+}
+</code></pre></div><h2 id="_3-新建一个vue文件-如-drawmap-vue"><a href="#_3-新建一个vue文件-如-drawmap-vue" class="header-anchor">#</a> 3.新建一个vue文件,如: DrawMap.vue</h2> <div class="language- extra-class"><pre class="language-text"><code>// DrawMap.vue
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;div id=&quot;map&quot; :class=&quot;$style['map']&quot;&gt;&lt;/div&gt;
+    &lt;Button @click=&quot;addDraw&quot;&gt;添加画图功能&lt;/Button&gt;
+    &lt;Button @click=&quot;removeDraw&quot;&gt;移除画图功能&lt;/Button&gt;
+    &lt;Button @click=&quot;getDrawPx&quot;&gt;获取选中画图范围&lt;/Button&gt;
+    &lt;Button @click=&quot;clearDraw&quot;&gt;删除画图feature&lt;/Button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import Draw from '@/views/ol/js/draw.js';
+
+export default {
+  name: &quot;DrawMap&quot;,
+  data() {
+    return {
+      draw: null,
+    }
+  },
+  mounted() {
+    this.initMap();
+  },
+  methods: {
+    initMap() {
+      this.draw = new Draw();
+    },
+    addDraw() {
+      this.draw.add();
+    },
+    removeDraw() {
+      this.draw.remove();
+    },
+    clearDraw() {
+      this.draw.clear();
+    },
+    getDrawPx() {
+      let px = this.draw.get();
+      console.log('px', px)
+    }
+  },
+};
+&lt;/script&gt;
+
+&lt;style lang=&quot;less&quot; module&gt;
+.map {
+  width: 100%;
+  height: 500px;
+}
+&lt;/style&gt;
+</code></pre></div><h2 id="_4-获取画点位置的经纬度"><a href="#_4-获取画点位置的经纬度" class="header-anchor">#</a> 4.获取画点位置的经纬度</h2> <div class="language- extra-class"><pre class="language-text"><code>this.draw.on('drawend', (e) =&gt; {
+      console.log( e.feature.getGeometry().getExtent());
+})
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.05f59982.js" defer></script><script src="/assets/js/2.16646843.js" defer></script><script src="/assets/js/32.bfcc76ea.js" defer></script>
+  </body>
+</html>
