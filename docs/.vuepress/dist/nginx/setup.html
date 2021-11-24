@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CentOS7安装Nginx | 洋洋</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/vuePress/img/羊驼.jpg">
+    <meta name="description" content="个人开发博客">
+    
+    <link rel="preload" href="/vuePress/assets/css/0.styles.7bced121.css" as="style"><link rel="preload" href="/vuePress/assets/js/app.a2ed2e65.js" as="script"><link rel="preload" href="/vuePress/assets/js/2.3fdd00fb.js" as="script"><link rel="preload" href="/vuePress/assets/js/38.6d6b379d.js" as="script"><link rel="prefetch" href="/vuePress/assets/js/10.dfab7e43.js"><link rel="prefetch" href="/vuePress/assets/js/11.6b0c6245.js"><link rel="prefetch" href="/vuePress/assets/js/12.a24a3407.js"><link rel="prefetch" href="/vuePress/assets/js/13.f405cca2.js"><link rel="prefetch" href="/vuePress/assets/js/14.8663f687.js"><link rel="prefetch" href="/vuePress/assets/js/15.da5f2491.js"><link rel="prefetch" href="/vuePress/assets/js/16.08a569b8.js"><link rel="prefetch" href="/vuePress/assets/js/17.04a3490d.js"><link rel="prefetch" href="/vuePress/assets/js/18.6e1ac529.js"><link rel="prefetch" href="/vuePress/assets/js/19.e4f00346.js"><link rel="prefetch" href="/vuePress/assets/js/20.22e87587.js"><link rel="prefetch" href="/vuePress/assets/js/21.23eb00ba.js"><link rel="prefetch" href="/vuePress/assets/js/22.3ef8f39a.js"><link rel="prefetch" href="/vuePress/assets/js/23.f71a4ca5.js"><link rel="prefetch" href="/vuePress/assets/js/24.b8cfce9d.js"><link rel="prefetch" href="/vuePress/assets/js/25.4a9d71e5.js"><link rel="prefetch" href="/vuePress/assets/js/26.a93b3e93.js"><link rel="prefetch" href="/vuePress/assets/js/27.4f18d856.js"><link rel="prefetch" href="/vuePress/assets/js/28.6fff1d2d.js"><link rel="prefetch" href="/vuePress/assets/js/29.621b9ed4.js"><link rel="prefetch" href="/vuePress/assets/js/3.db1d5340.js"><link rel="prefetch" href="/vuePress/assets/js/30.6fe32818.js"><link rel="prefetch" href="/vuePress/assets/js/31.bfa366f6.js"><link rel="prefetch" href="/vuePress/assets/js/32.a052ce88.js"><link rel="prefetch" href="/vuePress/assets/js/33.3f1965fc.js"><link rel="prefetch" href="/vuePress/assets/js/34.fad65114.js"><link rel="prefetch" href="/vuePress/assets/js/35.03efb286.js"><link rel="prefetch" href="/vuePress/assets/js/36.e0d3b633.js"><link rel="prefetch" href="/vuePress/assets/js/37.c8a722eb.js"><link rel="prefetch" href="/vuePress/assets/js/39.daa3c3d7.js"><link rel="prefetch" href="/vuePress/assets/js/4.7e8f51ec.js"><link rel="prefetch" href="/vuePress/assets/js/40.7fed97d2.js"><link rel="prefetch" href="/vuePress/assets/js/41.eb1c7555.js"><link rel="prefetch" href="/vuePress/assets/js/42.aeba169c.js"><link rel="prefetch" href="/vuePress/assets/js/43.a7e9ced2.js"><link rel="prefetch" href="/vuePress/assets/js/44.c58385dd.js"><link rel="prefetch" href="/vuePress/assets/js/45.80ff3b2b.js"><link rel="prefetch" href="/vuePress/assets/js/46.7f13deb7.js"><link rel="prefetch" href="/vuePress/assets/js/47.d3403de0.js"><link rel="prefetch" href="/vuePress/assets/js/48.18a619d2.js"><link rel="prefetch" href="/vuePress/assets/js/49.f3aa60ed.js"><link rel="prefetch" href="/vuePress/assets/js/5.752f565f.js"><link rel="prefetch" href="/vuePress/assets/js/50.31dbc3c8.js"><link rel="prefetch" href="/vuePress/assets/js/51.41282e6f.js"><link rel="prefetch" href="/vuePress/assets/js/52.b1ee7a0d.js"><link rel="prefetch" href="/vuePress/assets/js/53.1843aa15.js"><link rel="prefetch" href="/vuePress/assets/js/54.93b248e3.js"><link rel="prefetch" href="/vuePress/assets/js/55.02b11b23.js"><link rel="prefetch" href="/vuePress/assets/js/56.9cc3fef4.js"><link rel="prefetch" href="/vuePress/assets/js/57.4c9f09f3.js"><link rel="prefetch" href="/vuePress/assets/js/58.13785320.js"><link rel="prefetch" href="/vuePress/assets/js/59.3a90cdbc.js"><link rel="prefetch" href="/vuePress/assets/js/6.cdea1a9c.js"><link rel="prefetch" href="/vuePress/assets/js/60.bc196cbb.js"><link rel="prefetch" href="/vuePress/assets/js/61.bcfa14d2.js"><link rel="prefetch" href="/vuePress/assets/js/62.299b51d3.js"><link rel="prefetch" href="/vuePress/assets/js/63.847c726d.js"><link rel="prefetch" href="/vuePress/assets/js/64.af4dc24c.js"><link rel="prefetch" href="/vuePress/assets/js/65.fdd1ae94.js"><link rel="prefetch" href="/vuePress/assets/js/66.b8183bc4.js"><link rel="prefetch" href="/vuePress/assets/js/67.78594eaa.js"><link rel="prefetch" href="/vuePress/assets/js/68.9dc17cea.js"><link rel="prefetch" href="/vuePress/assets/js/69.d32abe11.js"><link rel="prefetch" href="/vuePress/assets/js/7.85a1ac79.js"><link rel="prefetch" href="/vuePress/assets/js/70.cd6c4301.js"><link rel="prefetch" href="/vuePress/assets/js/71.8f707d7d.js"><link rel="prefetch" href="/vuePress/assets/js/72.66680b4b.js"><link rel="prefetch" href="/vuePress/assets/js/73.ab799129.js"><link rel="prefetch" href="/vuePress/assets/js/74.fcfd0f64.js"><link rel="prefetch" href="/vuePress/assets/js/8.fb5fb5df.js"><link rel="prefetch" href="/vuePress/assets/js/9.40dddac0.js">
+    <link rel="stylesheet" href="/vuePress/assets/css/0.styles.7bced121.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuePress/" class="home-link router-link-active"><img src="/vuePress/img/羊驼.jpg" alt="洋洋" class="logo"> <span class="site-name can-hide">洋洋</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuePress/start/" class="nav-link">
+  开始
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="js" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="js" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuePress/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vue3/" class="nav-link">
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/openlayer/" class="nav-link">
+  openlayer
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/cesium/" class="nav-link">
+  cesium
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vscode/" class="nav-link">
+  vscode
+</a></li></ul></div></div><div class="nav-item"><a href="/vuePress/css/" class="nav-link">
+  css
+</a></div><div class="nav-item"><a href="/vuePress/nginx/" class="nav-link router-link-active">
+  nginx
+</a></div><div class="nav-item"><a href="/vuePress/jenkins/" class="nav-link">
+  jenkins
+</a></div><div class="nav-item"><a href="https://github.com/18595439829/vuePress" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuePress/start/" class="nav-link">
+  开始
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="js" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="js" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuePress/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vue3/" class="nav-link">
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/openlayer/" class="nav-link">
+  openlayer
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/cesium/" class="nav-link">
+  cesium
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vscode/" class="nav-link">
+  vscode
+</a></li></ul></div></div><div class="nav-item"><a href="/vuePress/css/" class="nav-link">
+  css
+</a></div><div class="nav-item"><a href="/vuePress/nginx/" class="nav-link router-link-active">
+  nginx
+</a></div><div class="nav-item"><a href="/vuePress/jenkins/" class="nav-link">
+  jenkins
+</a></div><div class="nav-item"><a href="https://github.com/18595439829/vuePress" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/vuePress/nginx/setup.html" aria-current="page" class="active sidebar-link">CentOS7安装Nginx</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_1-gcc-安装" class="sidebar-link">1. gcc 安装</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_2-pcre-pcre-devel-安装" class="sidebar-link">2.PCRE pcre-devel 安装</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_3-zlib-安装" class="sidebar-link">3.zlib 安装</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_4-openssl-安装" class="sidebar-link">4.OpenSSL 安装</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_5-下载nginx安装包" class="sidebar-link">5.下载nginx安装包</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_6-解压安装包" class="sidebar-link">6.解压安装包</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_7-把nginx-1-18-0安装到nginx目录" class="sidebar-link">7.把nginx-1.18.0安装到nginx目录</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_8-执行编译命令" class="sidebar-link">8.执行编译命令</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_9-启动nginx" class="sidebar-link">9.启动nginx</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_10-nginx常用命令" class="sidebar-link">10.nginx常用命令</a></li><li class="sidebar-sub-header"><a href="/vuePress/nginx/setup.html#_11-linux查询端口占用情况" class="sidebar-link">11.linux查询端口占用情况</a></li></ul></li><li><a href="/vuePress/nginx/nginx.html" class="sidebar-link">使用nginx将自己的vue项目部署到服务器上</a></li><li><a href="/vuePress/nginx/nginxProxy.html" class="sidebar-link">nginx部署vue项目后,配置反向代理,但项目访问接口失败</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="centos7安装nginx"><a href="#centos7安装nginx" class="header-anchor">#</a> CentOS7安装Nginx</h1> <p>参考自 <a href="https://www.cnblogs.com/boonya/p/7907999.html" target="_blank" rel="noopener noreferrer">CentOS7安装Nginx<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://blog.csdn.net/qq_36813879/article/details/108725008" target="_blank" rel="noopener noreferrer">Nginx安装完成，没有sbin目录如何启动<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://blog.csdn.net/xiyangfan/article/details/5321790" target="_blank" rel="noopener noreferrer">Linux ./configure --prefix命令<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="_1-gcc-安装"><a href="#_1-gcc-安装" class="header-anchor">#</a> 1. gcc 安装</h2> <p>安装 nginx 需要先将官网下载的源码进行编译，编译依赖 gcc 环境，如果没有 gcc 环境，则需要安装：</p> <div class="language- extra-class"><pre class="language-text"><code>yum install gcc-c++
+</code></pre></div><h2 id="_2-pcre-pcre-devel-安装"><a href="#_2-pcre-pcre-devel-安装" class="header-anchor">#</a> 2.PCRE pcre-devel 安装</h2> <p>PCRE(Perl Compatible Regular Expressions) 是一个Perl库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库，pcre-devel 是使用 pcre 开发的一个二次开发库。nginx也需要此库。命令：</p> <div class="language- extra-class"><pre class="language-text"><code>yum install -y pcre pcre-devel
+</code></pre></div><h2 id="_3-zlib-安装"><a href="#_3-zlib-安装" class="header-anchor">#</a> 3.zlib 安装</h2> <p>zlib 库提供了很多种压缩和解压缩的方式， nginx 使用 zlib 对 http 包的内容进行 gzip ，所以需要在 Centos 上安装 zlib 库。</p> <div class="language- extra-class"><pre class="language-text"><code>yum install -y zlib zlib-devel
+</code></pre></div><h2 id="_4-openssl-安装"><a href="#_4-openssl-安装" class="header-anchor">#</a> 4.OpenSSL 安装</h2> <p>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。
+nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库。</p> <div class="language- extra-class"><pre class="language-text"><code>yum install -y openssl openssl-devel
+</code></pre></div><h2 id="_5-下载nginx安装包"><a href="#_5-下载nginx安装包" class="header-anchor">#</a> 5.下载nginx安装包</h2> <p>nginx管网下载地址: <a href="https://nginx.org/en/download.html" target="_blank" rel="noopener noreferrer">https://nginx.org/en/download.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- extra-class"><pre class="language-text"><code>wget -c https://nginx.org/download/nginx-1.18.0.tar.gz
+</code></pre></div><h2 id="_6-解压安装包"><a href="#_6-解压安装包" class="header-anchor">#</a> 6.解压安装包</h2> <p>目前最新版是1.18.0</p> <div class="language- extra-class"><pre class="language-text"><code>tar -zxvf nginx-1.18.0.tar.gz
+cd nginx-1.18.0
+</code></pre></div><h2 id="_7-把nginx-1-18-0安装到nginx目录"><a href="#_7-把nginx-1-18-0安装到nginx目录" class="header-anchor">#</a> 7.把nginx-1.18.0安装到nginx目录</h2> <div class="language- extra-class"><pre class="language-text"><code>./configure --prefix=/usr/local/nginx
+</code></pre></div><p>*–prefix=path 定义一个目录，存放服务器上的文件 ，也就是nginx的安装目录，默认使用 /usr/local/nginx
+*</p> <h2 id="_8-执行编译命令"><a href="#_8-执行编译命令" class="header-anchor">#</a> 8.执行编译命令</h2> <div class="language- extra-class"><pre class="language-text"><code>make &amp;&amp; make install
+</code></pre></div><p>之后你会看到local目录下有一个跟你安装的nginx1.18.0同级的nginx目录，里面就有sbin目录了</p> <h2 id="_9-启动nginx"><a href="#_9-启动nginx" class="header-anchor">#</a> 9.启动nginx</h2> <div class="language- extra-class"><pre class="language-text"><code>cd /usr/local/nginx/sbin
+</code></pre></div><p>然后启动nginx</p> <div class="language- extra-class"><pre class="language-text"><code>./nginx 
+</code></pre></div><h2 id="_10-nginx常用命令"><a href="#_10-nginx常用命令" class="header-anchor">#</a> 10.nginx常用命令</h2> <div class="language- extra-class"><pre class="language-text"><code>// 启动nginx
+./nginx
+// 修改配置文件后重载
+./nginx -s reload
+// 退出nginx
+./nginx -s quit 或者 ./nginx -s stop
+</code></pre></div><h2 id="_11-linux查询端口占用情况"><a href="#_11-linux查询端口占用情况" class="header-anchor">#</a> 11.linux查询端口占用情况</h2> <p>https://www.runoob.com/w3cnote/linux-check-port-usage.html</p> <div class="language- extra-class"><pre class="language-text"><code>lsof -i  // 查询所有端口占用情况
+lsof -i:端口号  eg: lsof -i:8080  // 查询某一端口(8080)占用情况
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/vuePress/nginx/nginx.html">
+        使用nginx将自己的vue项目部署到服务器上
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuePress/assets/js/app.a2ed2e65.js" defer></script><script src="/vuePress/assets/js/2.3fdd00fb.js" defer></script><script src="/vuePress/assets/js/38.6d6b379d.js" defer></script>
+  </body>
+</html>
