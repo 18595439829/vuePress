@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue3中关于标签自身属性和自定义属性与vue2的区别,导致css出现问题 | 洋洋</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/vuePress/img/羊驼.jpg">
+    <meta name="description" content="个人开发博客">
+    
+    <link rel="preload" href="/vuePress/assets/css/0.styles.7bced121.css" as="style"><link rel="preload" href="/vuePress/assets/js/app.9e28e6bd.js" as="script"><link rel="preload" href="/vuePress/assets/js/2.3fdd00fb.js" as="script"><link rel="preload" href="/vuePress/assets/js/55.02b11b23.js" as="script"><link rel="prefetch" href="/vuePress/assets/js/10.dfab7e43.js"><link rel="prefetch" href="/vuePress/assets/js/11.32950442.js"><link rel="prefetch" href="/vuePress/assets/js/12.1561aed3.js"><link rel="prefetch" href="/vuePress/assets/js/13.f405cca2.js"><link rel="prefetch" href="/vuePress/assets/js/14.8663f687.js"><link rel="prefetch" href="/vuePress/assets/js/15.da5f2491.js"><link rel="prefetch" href="/vuePress/assets/js/16.08a569b8.js"><link rel="prefetch" href="/vuePress/assets/js/17.04a3490d.js"><link rel="prefetch" href="/vuePress/assets/js/18.6e1ac529.js"><link rel="prefetch" href="/vuePress/assets/js/19.e4f00346.js"><link rel="prefetch" href="/vuePress/assets/js/20.22e87587.js"><link rel="prefetch" href="/vuePress/assets/js/21.bbd278ec.js"><link rel="prefetch" href="/vuePress/assets/js/22.48925b6b.js"><link rel="prefetch" href="/vuePress/assets/js/23.f71a4ca5.js"><link rel="prefetch" href="/vuePress/assets/js/24.b8cfce9d.js"><link rel="prefetch" href="/vuePress/assets/js/25.4a9d71e5.js"><link rel="prefetch" href="/vuePress/assets/js/26.62549dcd.js"><link rel="prefetch" href="/vuePress/assets/js/27.e1f7edd6.js"><link rel="prefetch" href="/vuePress/assets/js/28.04a9490c.js"><link rel="prefetch" href="/vuePress/assets/js/29.b7c2ca2c.js"><link rel="prefetch" href="/vuePress/assets/js/3.db1d5340.js"><link rel="prefetch" href="/vuePress/assets/js/30.df157ab7.js"><link rel="prefetch" href="/vuePress/assets/js/31.73e6999d.js"><link rel="prefetch" href="/vuePress/assets/js/32.b759b8a0.js"><link rel="prefetch" href="/vuePress/assets/js/33.3f1965fc.js"><link rel="prefetch" href="/vuePress/assets/js/34.d17667b1.js"><link rel="prefetch" href="/vuePress/assets/js/35.03efb286.js"><link rel="prefetch" href="/vuePress/assets/js/36.e0d3b633.js"><link rel="prefetch" href="/vuePress/assets/js/37.c8a722eb.js"><link rel="prefetch" href="/vuePress/assets/js/38.6d6b379d.js"><link rel="prefetch" href="/vuePress/assets/js/39.daa3c3d7.js"><link rel="prefetch" href="/vuePress/assets/js/4.7e8f51ec.js"><link rel="prefetch" href="/vuePress/assets/js/40.7fed97d2.js"><link rel="prefetch" href="/vuePress/assets/js/41.eb1c7555.js"><link rel="prefetch" href="/vuePress/assets/js/42.870bcb91.js"><link rel="prefetch" href="/vuePress/assets/js/43.4170922b.js"><link rel="prefetch" href="/vuePress/assets/js/44.fddec038.js"><link rel="prefetch" href="/vuePress/assets/js/45.c0ede2ad.js"><link rel="prefetch" href="/vuePress/assets/js/46.7f13deb7.js"><link rel="prefetch" href="/vuePress/assets/js/47.d3403de0.js"><link rel="prefetch" href="/vuePress/assets/js/48.970ba1d9.js"><link rel="prefetch" href="/vuePress/assets/js/49.9eac9bc8.js"><link rel="prefetch" href="/vuePress/assets/js/5.752f565f.js"><link rel="prefetch" href="/vuePress/assets/js/50.0a19108c.js"><link rel="prefetch" href="/vuePress/assets/js/51.41282e6f.js"><link rel="prefetch" href="/vuePress/assets/js/52.b1ee7a0d.js"><link rel="prefetch" href="/vuePress/assets/js/53.7ee85095.js"><link rel="prefetch" href="/vuePress/assets/js/54.71c90e3c.js"><link rel="prefetch" href="/vuePress/assets/js/56.9cc3fef4.js"><link rel="prefetch" href="/vuePress/assets/js/57.ecab93e2.js"><link rel="prefetch" href="/vuePress/assets/js/58.eaa8841e.js"><link rel="prefetch" href="/vuePress/assets/js/59.05151382.js"><link rel="prefetch" href="/vuePress/assets/js/6.cdea1a9c.js"><link rel="prefetch" href="/vuePress/assets/js/60.ce2ec88e.js"><link rel="prefetch" href="/vuePress/assets/js/61.bcfa14d2.js"><link rel="prefetch" href="/vuePress/assets/js/62.299b51d3.js"><link rel="prefetch" href="/vuePress/assets/js/63.2edfdf0b.js"><link rel="prefetch" href="/vuePress/assets/js/64.cae63089.js"><link rel="prefetch" href="/vuePress/assets/js/65.e1dd07f4.js"><link rel="prefetch" href="/vuePress/assets/js/66.9605c7a8.js"><link rel="prefetch" href="/vuePress/assets/js/67.78594eaa.js"><link rel="prefetch" href="/vuePress/assets/js/68.9dc17cea.js"><link rel="prefetch" href="/vuePress/assets/js/69.d32abe11.js"><link rel="prefetch" href="/vuePress/assets/js/7.2e0cd4ab.js"><link rel="prefetch" href="/vuePress/assets/js/70.a3091d74.js"><link rel="prefetch" href="/vuePress/assets/js/71.8c039ae0.js"><link rel="prefetch" href="/vuePress/assets/js/72.66680b4b.js"><link rel="prefetch" href="/vuePress/assets/js/73.ab799129.js"><link rel="prefetch" href="/vuePress/assets/js/74.fcfd0f64.js"><link rel="prefetch" href="/vuePress/assets/js/8.02e11749.js"><link rel="prefetch" href="/vuePress/assets/js/9.40dddac0.js">
+    <link rel="stylesheet" href="/vuePress/assets/css/0.styles.7bced121.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuePress/" class="home-link router-link-active"><img src="/vuePress/img/羊驼.jpg" alt="洋洋" class="logo"> <span class="site-name can-hide">洋洋</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuePress/start/" class="nav-link">
+  开始
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="js" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="js" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuePress/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vue3/" class="nav-link router-link-active">
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/openlayer/" class="nav-link">
+  openlayer
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/cesium/" class="nav-link">
+  cesium
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vscode/" class="nav-link">
+  vscode
+</a></li></ul></div></div><div class="nav-item"><a href="/vuePress/css/" class="nav-link">
+  css
+</a></div><div class="nav-item"><a href="/vuePress/nginx/" class="nav-link">
+  nginx
+</a></div><div class="nav-item"><a href="/vuePress/jenkins/" class="nav-link">
+  jenkins
+</a></div><div class="nav-item"><a href="https://github.com/18595439829/vuePress" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuePress/start/" class="nav-link">
+  开始
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="js" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="js" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuePress/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vue3/" class="nav-link router-link-active">
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/openlayer/" class="nav-link">
+  openlayer
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/cesium/" class="nav-link">
+  cesium
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuePress/vscode/" class="nav-link">
+  vscode
+</a></li></ul></div></div><div class="nav-item"><a href="/vuePress/css/" class="nav-link">
+  css
+</a></div><div class="nav-item"><a href="/vuePress/nginx/" class="nav-link">
+  nginx
+</a></div><div class="nav-item"><a href="/vuePress/jenkins/" class="nav-link">
+  jenkins
+</a></div><div class="nav-item"><a href="https://github.com/18595439829/vuePress" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/vuePress/vue3/lessError.html" class="sidebar-link">vue3中使用less报错</a></li><li><a href="/vuePress/vue3/router.html" class="sidebar-link">vue3使用vue-router</a></li><li><a href="/vuePress/vue3/is.html" class="sidebar-link">vue3使用is和v-is</a></li><li><a href="/vuePress/vue3/property.html" aria-current="page" class="active sidebar-link">vue3中关于标签自身属性和自定义属性与vue2的区别,导致css出现问题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuePress/vue3/property.html#vue3中" class="sidebar-link">vue3中</a></li><li class="sidebar-sub-header"><a href="/vuePress/vue3/property.html#vue2中" class="sidebar-link">vue2中</a></li></ul></li><li><a href="/vuePress/vue3/ts-any.html" class="sidebar-link">vue3+ts,解决编译时,控制台报警告:存在any类型</a></li><li><a href="/vuePress/vue3/v-model.html" class="sidebar-link">vue3在组件上使用自定义v-model</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue3中关于标签自身属性和自定义属性与vue2的区别-导致css出现问题"><a href="#vue3中关于标签自身属性和自定义属性与vue2的区别-导致css出现问题" class="header-anchor">#</a> vue3中关于标签自身属性和自定义属性与vue2的区别,导致css出现问题</h1> <h2 id="vue3中"><a href="#vue3中" class="header-anchor">#</a> vue3中</h2> <div class="language- extra-class"><pre class="language-text"><code>&lt;div :selected=&quot;true&quot;&gt;selected&lt;/div&gt;
+&lt;div :selected=&quot;false&quot;&gt;UnSlected&lt;/div&gt;
+</code></pre></div><p>渲染完成后,控制台检查
+<img src="/img/vue3.jpg" alt="vue3.jpg"></p> <h2 id="vue2中"><a href="#vue2中" class="header-anchor">#</a> vue2中</h2> <div class="language- extra-class"><pre class="language-text"><code>&lt;div :selected=&quot;true&quot;&gt;selected&lt;/div&gt;
+&lt;div :selected=&quot;false&quot;&gt;UnSlected&lt;/div&gt;
+</code></pre></div><p>渲染完成后,控制台检查
+<img src="/img/vue2.jpg" alt="vue2.jpg">
+由于标签解析完成后,标签自身属性在vue3中和vue2保持一致,但是自定义属性则发生了一些变化,如果在css中使用选择器需要注意:</p> <blockquote><p>vue3中带上属性值,否则样式不生效,vue2可以不写属性值,默认是true</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>//  vue3
+div[selected=true] {
+      color: red;
+    }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// vue2
+div[selected] {
+      color: red;
+    }
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuePress/vue3/is.html" class="prev">
+        vue3使用is和v-is
+      </a></span> <span class="next"><a href="/vuePress/vue3/ts-any.html">
+        vue3+ts,解决编译时,控制台报警告:存在any类型
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuePress/assets/js/app.9e28e6bd.js" defer></script><script src="/vuePress/assets/js/2.3fdd00fb.js" defer></script><script src="/vuePress/assets/js/55.02b11b23.js" defer></script>
+  </body>
+</html>
