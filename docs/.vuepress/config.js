@@ -47,13 +47,13 @@ module.exports = {
     sidebar: {
       '/vue/': [ 'vuePress', 'directiveDrag', 'filter', 'vue-plugin' ,'fileUpload', 'formatListToTel', 'axiosUseIE10',        'vscodeAddVueTemplate', 'markdown', 'formatListToTel', 'html2canvas', 'waterfall', 'vue-cropper', 'main-css', 'live2d'],
       '/vue3/': ['lessError', 'router', 'is', 'property', 'ts-any', 'v-model'],
-      '/js/': ['object.keys-for.of', 'requestAnimation', 'listToTree', 'base64ToFile', 'breakFor'],
+      '/js/': ['object.keys-for.of', 'requestAnimation', 'listToTree', 'base64ToFile', 'breakFor', 'diff.js', 'formatDate.js', 'contenteditable', 'getBoundingClientRect', 'moveable-drag', 'moveable-resize'],
       '/uni-app/': ['image', 'subNVue'],
       '/openlayer/': ['initMap', 'openlayer', 'feature', 'point-line-polygon', 'heatmap', 'draw'],
       '/cesium/': ['init', 'api'],
-      '/git/': ['gitConfig', 'changeOrigin'],
+      '/git/': ['gitConfig', 'changeOrigin', 'npm-install'],
       '/vscode/': ['ctrl+click', 'asyncSetting'],
-      '/css/': ['clipPath', 'chrome-scrollbar', 'rgba-16#'],
+      '/css/': ['clipPath', 'chrome-scrollbar', 'rgba-16', 'text-overflow'],
       '/nginx/': ['setup','nginx', 'nginxProxy', ],
       '/jenkins/': ['init']
     }
